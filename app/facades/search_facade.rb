@@ -1,13 +1,13 @@
 class SearchFacade
 
-  attr_reader :params
+  attr_reader :search
 
   def initialize(params)
-    @params = params.values
+    @search = params[:q]
   end
 
   def results
-    service.get_results(params).each do |data|
+    service.get_results(search).each do |data|
       Result.new(data)
     end
   end
