@@ -13,5 +13,7 @@ feature "User can visit root page" do
     fill_in 'q', with: 80206
     click_on "Locate"
 
+    expect(page).to have_content('Results for 80206')
+    expect(page).to have_content('15 Closest Stations with 5 miles')
   end
 end
