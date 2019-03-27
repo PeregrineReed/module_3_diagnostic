@@ -8,4 +8,10 @@ feature "User can visit root page" do
       expect(page).to have_selector("input[value='Search by zip...']")
     end
   end
+  it 'and can use search bar' do
+    visit '/'
+    fill_in 'q', with: 80206
+    click_on "Locate"
+
+  end
 end
