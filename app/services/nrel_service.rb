@@ -1,7 +1,8 @@
 class NrelService
 
   def get_json(params)
-    response = conn.get("v1.json?api_key=#{ENV['NREL_API_KEY']}&zip=#{params}&format=JSON&fuel_type=LPG,ELEC&access_code=public")
+    response = conn.get("v1.json?api_key=#{ENV['NREL_API_KEY']}&zip=#{params}&format=JSON")
+    # binding.pry
     JSON.parse(response.body)
   end
 
