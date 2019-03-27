@@ -14,6 +14,13 @@ feature "User can visit root page" do
     click_on "Locate"
 
     expect(page).to have_content('Results for 80206')
-    expect(page).to have_content('15 Closest Stations with 5 miles')
+
+    expect(page).to have_content('Station Name')
+    expect(page).to have_content('Station Address')
+    expect(page).to have_content('Fuel Types')
+    expect(page).to have_content('Distance')
+    expect(page).to have_content('Access Times')
+
+    expect(page).to have_content('15 Closest Stations within 5 miles')
   end
 end

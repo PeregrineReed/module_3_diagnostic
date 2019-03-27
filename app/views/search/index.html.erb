@@ -1,13 +1,14 @@
 <h1>Results for <%= facade.search %></h1>
 
 <% facade.stations.each do |result| %>
-
-  <p><%= result.name %></p>
-  <p><%= result.address %></p>
-  <p><%= result.fuel_types %></p>
-  <p><%= result.distance %></p>
-  <p><%= result.access_times %></p>
+  <section class='station'>
+    <p>Station Name: <%= result.name %></p>
+    <p>Station Address: <%= result.address %></p>
+    <p>Fuel Types: <%= result.fuel_types %></p>
+    <p>Distance: <%= result.distance %></p>
+    <p>Access Times: <%= result.access_times %></p>
+  </section>
 
 <% end %>
 
-<h2>15 closest stations within 5 miles</h2>
+<h2>15 Closest Stations within 5 miles</h2>
