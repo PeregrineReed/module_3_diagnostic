@@ -6,10 +6,10 @@ describe 'SearchFacade' do
     sf =SearchFacade.new(params)
   end
 
-  it '#results' do
+  it '#stations' do
     params = {}
     sf =SearchFacade.new(params)
 
-    sf.results
+    sf.stations
   end
 end

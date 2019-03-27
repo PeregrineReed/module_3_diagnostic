@@ -6,10 +6,13 @@ class SearchFacade
     @search = params[:q]
   end
 
-  def results
+  def stations
+    stations = []
     service.get_results(search).each do |data|
-      Result.new(data)
+      station = Station.new(data)
+      stations << station
     end
+    stations
   end
 
   def service

@@ -1,8 +1,12 @@
 <h1>Results for <%= facade.search %></h1>
 
-<% facade.results.each do |result| %>
+<% facade.stations.each do |result| %>
 
-  <p><%= result.attribute %></p>
+  <p><%= result.name %></p>
+  <p><%= result.address %></p>
+  <p><%= result.fuel_types %></p>
+  <p><%= result.distance %></p>
+  <p><%= result.access_times %></p>
 
 <% end %>
 
