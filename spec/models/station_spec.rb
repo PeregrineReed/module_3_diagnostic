@@ -2,7 +2,13 @@ require 'rails_helper'
 
 describe 'Station' do
   before :each do
-    @data = {}
+    @data = {
+      station_name: 'Station',
+      street_address: '123 Street St.',
+      fuel_type_code: 'ELEC',
+      distance: '0.5',
+      access_days_time: '24'
+    }
     @station = Station.new(@data)
   end
 
@@ -11,10 +17,10 @@ describe 'Station' do
   end
 
   it 'has attributes' do
-    expect(@station.name).to eq('')
-    expect(@station.street_address).to eq('')
-    expect(@station.fuel_types).to eq('')
-    expect(@station.distance).to eq('')
-    expect(@station.access_times).to eq('')
+    expect(@station.name).to eq('Station')
+    expect(@station.address).to eq('123 Street St.')
+    expect(@station.fuel_types).to eq('ELEC')
+    expect(@station.distance).to eq('0.5')
+    expect(@station.access_times).to eq('24')
   end
 end
