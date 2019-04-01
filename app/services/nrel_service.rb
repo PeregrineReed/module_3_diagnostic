@@ -1,17 +1,15 @@
-class NrelService
-
-  def get_json(params)
-    response = conn.get("v1.json?api_key=#{ENV['NREL_API_KEY']}&zip=#{params}&format=JSON")
-    # binding.pry
-    JSON.parse(response.body)
+class NRELService
+  def initialize(zip)
+    @zip = zip
   end
 
-  def get_results(params)
-    get_json(params)['fuel_stations']
+  def json
+    response = conn.get("?api_key=#{ENV['NREL_KEY']}&location=#{@zip}&fuel_type=LPG,ELEC&access=public&status=E&limit=15")
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def conn
-    Faraday.new(url: 'https://developer.nrel.gov/api/alt-fuel-stations/') do |faraday|
+    Faraday.new(url: 'https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json') do |faraday|
       faraday.adapter Faraday.default_adapter
     end
   end

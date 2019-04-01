@@ -1,12 +1,10 @@
 require 'rails_helper'
 
-describe 'NrelService' do
-
+describe 'NRELService' do
   it 'exists' do
-    ns = NrelService.new
-  end
+    zip = 80206
+    ns = NRELService.new(zip)
 
-  it '#get_results' do
-
+    expect(ns).to be_a(NRELService)
   end
 end

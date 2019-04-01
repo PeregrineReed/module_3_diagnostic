@@ -1,29 +1,13 @@
-<h1>Results for <%= facade.search %></h1>
+<h2>Total Results: <%= facade.total_results %></h2>
 
-<% facade.stations.each do |result| %>
-  <section class='station'>
-    <p>Station Name: <%= result.name %></p>
-    <p>Station Address: <%= result.address %></p>
-    <p>Fuel Types: <%= result.fuel_types %></p>
-    <p>Distance: <%= result.distance %></p>
-    <p>Access Times: <%= result.access_times %></p>
-  </section>
-  <br>
-  <br>
+<h2>15 Closest Stations</h2>
 
-<% end %>
-
-<h2>15 Closest Stations within 5 miles</h2>
-<% facade.stations.each do |result| %>
-  <% if (result.fuel_types == 'LPG' || result.fuel_types == 'ELEC') && result.access == 'public' %>
-    <section class='station'>
-      <p>Station Name: <%= result.name %></p>
-      <p>Station Address: <%= result.address %></p>
-      <p>Fuel Types: <%= result.fuel_types %></p>
-      <p>Distance: <%= result.distance %></p>
-      <p>Access Times: <%= result.access_times %></p>
-    </section>
-    <br>
-    <br>
-  <% end %>
+<% facade.stations.each do |station| %>
+  <ul class='station'>
+    <li class='name'><%= station.name %></li>
+    <li class='address'><%= station.address %></li>
+    <li class='fuel_types'><%= station.fuel_types %></li>
+    <li class='distance'><%= station.distance %></li>
+    <li class='access_times'><%= station.access_times %></li>
+  </ul>
 <% end %>

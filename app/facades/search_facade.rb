@@ -1,22 +1,25 @@
 class SearchFacade
-
-  attr_reader :search
-
+  
   def initialize(params)
-    @search = params[:q]
+    @zip = params
+  end
+
+  def total_results
+    response[:total_results]
   end
 
   def stations
-    stations = []
-    service.get_results(search).each do |data|
-      station = Station.new(data)
-      stations << station
+    response[:fuel_stations].map do |station|
+      Station.new(station)
     end
-    stations
+  end
+
+  def response
+    service.json
   end
 
   def service
-    NrelService.new
+    NRELService.new(@zip)
   end
 
 end

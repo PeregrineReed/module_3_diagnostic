@@ -16,9 +16,6 @@ gem 'factory_bot_rails'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
-  gem 'capybara'
-  gem 'launchy'
-  gem 'shoulda-matchers'
   gem 'pry'
 end
 
@@ -31,4 +28,6 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'capybara'
+  gem 'launchy'
+  gem 'shoulda-matchers'
 end
