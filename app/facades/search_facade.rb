@@ -1,5 +1,5 @@
 class SearchFacade
-
+  
   def initialize(params)
     @zip = params
   end

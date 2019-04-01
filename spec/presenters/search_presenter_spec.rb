@@ -21,5 +21,4 @@ describe 'SearchFacade' do
 
     expect(all_stations).to eq(true)
   end
-
 end
